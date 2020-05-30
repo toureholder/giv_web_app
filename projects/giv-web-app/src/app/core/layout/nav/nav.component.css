@@ -1,0 +1,14 @@
+nav {
+  display: block;
+  border-bottom: 1px solid lightgray;
+  height: 100%;
+}
+
+.nav-content {
+  display: grid;
+  align-items: center;
+}
+
+img.logo {
+  height: 2.4rem;
+}
