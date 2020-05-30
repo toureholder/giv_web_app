@@ -1,4 +1,4 @@
-.main-layout {
+.root {
   height: 100%;
   display: grid;
   grid-template-rows: 7rem auto 7rem;
