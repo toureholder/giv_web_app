@@ -1,0 +1,17 @@
+.root {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 7rem auto 7rem;
+}
+
+main {
+  background-color: lightgray;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-layout {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 7rem auto 14.4rem;
+  }
+}
