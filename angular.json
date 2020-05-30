@@ -2,5 +2,123 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "giv-web-app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/giv-web-app",
+      "sourceRoot": "projects/giv-web-app/src",
+      "prefix": "giv",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/giv-web-app",
+            "index": "projects/giv-web-app/src/index.html",
+            "main": "projects/giv-web-app/src/main.ts",
+            "polyfills": "projects/giv-web-app/src/polyfills.ts",
+            "tsConfig": "projects/giv-web-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/giv-web-app/src/favicon.ico",
+              "projects/giv-web-app/src/assets"
+            ],
+            "styles": [
+              "projects/giv-web-app/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/giv-web-app/src/environments/environment.ts",
+                  "with": "projects/giv-web-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "giv-web-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "giv-web-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "giv-web-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/giv-web-app/src/test.ts",
+            "polyfills": "projects/giv-web-app/src/polyfills.ts",
+            "tsConfig": "projects/giv-web-app/tsconfig.spec.json",
+            "karmaConfig": "projects/giv-web-app/karma.conf.js",
+            "assets": [
+              "projects/giv-web-app/src/favicon.ico",
+              "projects/giv-web-app/src/assets"
+            ],
+            "styles": [
+              "projects/giv-web-app/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/giv-web-app/tsconfig.app.json",
+              "projects/giv-web-app/tsconfig.spec.json",
+              "projects/giv-web-app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/giv-web-app/e2e/protractor.conf.js",
+            "devServerTarget": "giv-web-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "giv-web-app:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "giv-web-app"
 }
