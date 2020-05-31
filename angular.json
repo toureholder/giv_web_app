@@ -24,7 +24,8 @@
               "projects/giv-web-app/src/assets"
             ],
             "styles": [
-              "projects/giv-web-app/src/styles.css"
+              "projects/giv-web-app/src/styles/md-color-palette.css",
+              "projects/giv-web-app/src/styles/styles.css"
             ],
             "scripts": []
           },
@@ -88,7 +89,8 @@
               "projects/giv-web-app/src/assets"
             ],
             "styles": [
-              "projects/giv-web-app/src/styles.css"
+              "projects/giv-web-app/src/styles/md-color-palette.css",
+              "projects/giv-web-app/src/styles/styles.css"
             ],
             "scripts": []
           }

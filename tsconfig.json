@@ -12,14 +12,18 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "types": [
+      "jasmine"
+    ],
+    "resolveJsonModule": true,
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

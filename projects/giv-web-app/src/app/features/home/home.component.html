@@ -1,0 +1,9 @@
+<div class="giv-container">
+  <!-- Categories -->
+  <div *ngFor="let category of categories">
+    <giv-home-category-section
+      [category]="category"
+      data-test="home-category"
+    ></giv-home-category-section>
+  </div>
+</div>

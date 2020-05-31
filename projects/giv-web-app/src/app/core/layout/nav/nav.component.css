@@ -1,6 +1,6 @@
 nav {
   display: block;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid var(--material-color-grey-100, lightgray);
   height: 100%;
 }
 
