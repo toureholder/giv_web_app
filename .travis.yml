@@ -3,19 +3,20 @@ sudo: false
 
 language: node_js
 node_js:
-  - "10"
+  - '10'
 
 addons:
   chrome: stable
 
 cache:
   directories:
-     - ./node_modules
+    - ./node_modules
 
 stages:
-  - test
+  - name: test
+    if: type = pull_request
   - name: deploy
-    if: branch = master
+    if: type = push AND branch = master
 
 jobs:
   include:
