@@ -1,24 +1,38 @@
-import { FeaturedListingImageComponent } from './featured-listing-image.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ListingImage } from '../../models/listing-image/listing-image.model';
 import { Listing } from '../../models/listing/listing.model';
-import { TestBed } from '@angular/core/testing';
+import { FeaturedListingImageComponent } from './featured-listing-image.component';
 
 describe('FeaturedListingImageComponent', () => {
-  it('should render featured image', () => {
-    //Arrange / Given
+  let fixture: ComponentFixture<FeaturedListingImageComponent>;
+  let component: FeaturedListingImageComponent;
+  let template: HTMLElement;
+  let featuredImage: ListingImage | undefined;
+
+  beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [FeaturedListingImageComponent],
     });
 
-    const fixture = TestBed.createComponent(FeaturedListingImageComponent);
-    const component = fixture.componentInstance;
+    //Arrange / Given
+    fixture = TestBed.createComponent(FeaturedListingImageComponent);
+    component = fixture.componentInstance;
+    template = fixture.nativeElement;
     component.listing = Listing.getOneFake();
-    const featuredImage = component.listing.featuredImage;
+    featuredImage = component.listing.featuredImage;
 
     //Act / When
     fixture.detectChanges();
+  });
 
-    //Assert / Then
-    const template: HTMLElement = fixture.nativeElement;
+  it('should render featured image', () => {
     expect(template.querySelector('img')?.src).toBe(featuredImage?.url);
+  });
+
+  it('should have a link to listing detail', () => {
+    const a = template.querySelector('a') as any;
+    expect(template.querySelector('[href="/listing/1"]')).toBeTruthy();
   });
 });

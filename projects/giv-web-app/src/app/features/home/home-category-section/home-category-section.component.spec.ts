@@ -3,6 +3,7 @@ import { FeaturedListingImageComponent } from '../../../shared/components/featur
 import { ListingCategory } from '../../../shared/models/listing-category/listing-category.model';
 import { HomeCategorySectionComponent } from './home-category-section.component';
 import { Listing } from '../../../shared/models/listing/listing.model';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HomeCategorySectionComponent', () => {
   let component: HomeCategorySectionComponent;
@@ -12,6 +13,7 @@ describe('HomeCategorySectionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [
         HomeCategorySectionComponent,
         FeaturedListingImageComponent,

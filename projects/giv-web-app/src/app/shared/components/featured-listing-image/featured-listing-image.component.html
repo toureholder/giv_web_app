@@ -1,3 +1,5 @@
 <div>
-  <img [src]="listing.featuredImage?.url" [alt]="listing.title" />
+  <a [routerLink]="['/listing', listing.id]">
+    <img [src]="listing.featuredImage?.url" [alt]="listing.title" />
+  </a>
 </div>

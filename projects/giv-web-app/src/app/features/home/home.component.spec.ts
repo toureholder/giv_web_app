@@ -7,6 +7,7 @@ import { HomeComponent } from './home.component';
 import { HomeService } from './home.service';
 import { AsyncActionState } from '../../shared/models/component_async_action/component_async_action';
 import { HomeLoadingStateComponent } from './home-loading-state/home-loading-state.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HomeComponent', () => {
   let fixture: ComponentFixture<HomeComponent>;
@@ -24,6 +25,7 @@ describe('HomeComponent', () => {
     ];
 
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [
         HomeComponent,
         HomeCategorySectionComponent,
