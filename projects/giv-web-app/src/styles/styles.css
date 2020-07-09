@@ -12,6 +12,7 @@ body {
 
 :root {
   font-size: 62.5%;
+  --giv-default-border-radius: 5px;
 }
 
 .giv-container {

@@ -1,3 +1,8 @@
+div {
+  background: var(--material-color-grey-100, lightgray);
+  height: 100%;
+}
+
 img {
   object-fit: cover;
   object-position: 50% 50%;

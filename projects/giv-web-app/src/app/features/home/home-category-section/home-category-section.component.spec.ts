@@ -75,4 +75,20 @@ describe('HomeCategorySectionComponent', () => {
       6
     );
   });
+
+  it('should mantain template option if received as argument', () => {
+    //Arrange / Given
+    component.category = ListingCategory.getOneFake({
+      numberOfListings: numberOfListings,
+    });
+
+    component.templateOption = '3';
+
+    //Act / When
+    fixture.detectChanges();
+
+    //Then
+    expect(component.computedTemplateOption).toBe('3');
+    expect(template.querySelector('[data-template="3"]')).toBeTruthy();
+  });
 });
