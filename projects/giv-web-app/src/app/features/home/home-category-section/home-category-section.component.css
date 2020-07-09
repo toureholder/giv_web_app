@@ -1,5 +1,5 @@
 .image-div {
-  border-radius: 5px;
+  border-radius: var(--giv-default-border-radius);
   overflow: hidden;
 }
 
@@ -189,14 +189,14 @@ h2 {
 
   .image-grid[data-template='1'] {
     grid-template-areas:
-      'a a b b c e'
-      'a a b b d f';
+      'a a b d d e'
+      'a a c d d f';
   }
 
   .image-grid[data-template='2'] {
     grid-template-areas:
-      'a a b d d e'
-      'a a c d d f';
+      'a a b b c e'
+      'a a b b d f';
   }
 
   .image-grid[data-template='3'] {

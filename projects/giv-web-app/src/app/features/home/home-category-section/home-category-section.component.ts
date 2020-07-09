@@ -9,17 +9,23 @@ import { Listing } from '../../../shared/models/listing/listing.model';
 })
 export class HomeCategorySectionComponent implements OnInit {
   @Input() category: ListingCategory;
-  randomTemplateOption: string;
+  @Input() templateOption: string;
   listings: Listing[];
+  computedTemplateOption: string;
 
   ngOnInit(): void {
-    this.setTemplateOption();
+    this.computeTemplateOption();
     this.prepareListings();
   }
 
-  private setTemplateOption() {
+  private computeTemplateOption() {
+    this.computedTemplateOption =
+      this.templateOption || this.getRandomTemplateOption();
+  }
+
+  private getRandomTemplateOption(): string {
     const options = ['1', '2', '3', '4', '5', '6'];
-    this.randomTemplateOption = options[~~(Math.random() * options.length)];
+    return options[~~(Math.random() * options.length)];
   }
 
   private prepareListings() {
