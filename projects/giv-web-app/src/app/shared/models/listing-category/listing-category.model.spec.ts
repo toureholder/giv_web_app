@@ -1,9 +1,11 @@
 import { ListingCategory } from './listing-category.model';
-import * as fakekApiResponse from '../../../test/fake-api-response.json';
+import { fake } from '../../../test/fake-api-response';
 import { ListingImage } from '../listing-image/listing-image.model';
 import { Listing } from '../listing/listing.model';
 
 describe('ListingCategory Tests', () => {
+  const fakekApiResponse = fake.homeCategoriesList;
+
   it('should be able to deserialize a json object', () => {
     //Arrange / Given
     const json = fakekApiResponse[0];

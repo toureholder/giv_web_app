@@ -1,7 +1,9 @@
-import * as fakekApiResponse from '../../../test/fake-api-response.json';
+import { fake } from '../../../test/fake-api-response';
 import { Listing } from './listing.model';
 
 describe('Listing Model Tests', () => {
+  const fakekApiResponse = fake.homeCategoriesList;
+
   it('"featuredImage should be image with lowest position', () => {
     //Arrange / Given
     const model = Listing.getOneFake();

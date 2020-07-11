@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 import { ListingCategoryApi } from './listing-category.api';
-import * as fakekApiResponse from '../../../../test/fake-api-response.json';
+import { fake } from '../../../../test/fake-api-response';
 import { ListingImage } from 'projects/giv-web-app/src/app/shared/models/listing-image/listing-image.model';
 import { Listing } from 'projects/giv-web-app/src/app/shared/models/listing/listing.model';
 import { ListingCategory } from 'projects/giv-web-app/src/app/shared/models/listing-category/listing-category.model';
@@ -9,10 +9,12 @@ import { ListingCategory } from 'projects/giv-web-app/src/app/shared/models/list
 describe('Base Api Tests', () => {
   let mockHttpClient: jasmine.SpyObj<HttpClient>;
   let api: ListingCategoryApi;
+  let fakekApiResponse: any;
 
   beforeEach(() => {
     mockHttpClient = jasmine.createSpyObj('HttpClient', ['get']);
     api = new ListingCategoryApi(mockHttpClient);
+    fakekApiResponse = fake.homeCategoriesList;
   });
 
   it('should return array of listing categories', () => {
