@@ -1153,4 +1153,50 @@ export const fake = {
       ],
     },
   ],
+  listing: {
+    id: 59,
+    title: 'O bebê, o corpo e a linguagem',
+    description: 'Livro novo',
+    geonames_city_id: '6324222',
+    geonames_state_id: '3463504',
+    geonames_country_id: '3469034',
+    is_active: true,
+    updated_at: '2019-03-31T19:45:37.172Z',
+    user: {
+      id: 5,
+      name: 'Mildred Holder',
+      country_calling_code: '55',
+      phone_number: '61981629809',
+      image_url:
+        'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=2341064249278770&width=640&ext=1556066704&hash=AeTZceNlnDZCFkLw',
+      bio: null,
+      created_at: '2019-03-25T00:45:04.145Z',
+    },
+    categories: [
+      {
+        id: 25,
+        simple_name: 'Universitários e profissionais',
+        canonical_name: 'Livros universitários e profissionais',
+      },
+      {
+        id: 26,
+        simple_name: 'Infantojuvenil',
+        canonical_name: 'Livros infantojuvenis',
+      },
+    ],
+    listing_images: [
+      {
+        id: 218,
+        url:
+          'https://firebasestorage.googleapis.com/v0/b/givapp-938de.appspot.com/o/listings%2F1554061530227-8a303340-3260-11e9-a76d-41dbb4f4b758.jpg?alt=media&token=44ae5c35-f871-4de1-8397-26c54440e915',
+        position: 1,
+      },
+      {
+        id: 217,
+        url:
+          'https://firebasestorage.googleapis.com/v0/b/givapp-938de.appspot.com/o/listings%2F1554061530225-8a2fe520-3260-11e9-e4cf-f50b65a2522e.jpg?alt=media&token=c21eeec9-534e-45c5-ac2d-f37da07ee419',
+        position: 0,
+      },
+    ],
+  },
 };

@@ -59,10 +59,10 @@ export class Listing implements IListing {
     });
   }
 
-  static getOneFake(): Listing {
+  static getOneFake(id?: number): Listing {
     const fakeImages = ListingImage.getFakeList();
     return new Listing({
-      id: 1,
+      id: id || 1,
       title: 'Fake Listing',
       description:
         'Lorem ipsum dolor sit amet consectetur adispiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
