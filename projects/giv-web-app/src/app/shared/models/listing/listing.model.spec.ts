@@ -1,4 +1,4 @@
-import { fake } from '../../../test/fake-api-response';
+import { fake } from '../../../../testing/fake-api-response';
 import { Listing } from './listing.model';
 
 describe('Listing Model Tests', () => {

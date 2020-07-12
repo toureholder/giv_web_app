@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { ListingRepository } from './listing.repository';
 import { ListingApi } from './api/listing.api';
 import { Listing } from '../../../shared/models/listing/listing.model';
-import { fake } from '../../../test/fake-api-response';
+import { fake } from '../../../../testing/fake-api-response';
 import { of, Observable } from 'rxjs';
 
 describe('ListingService', () => {

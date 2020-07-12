@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { ListingApi } from './listing.api';
 import { HttpClient } from '@angular/common/http';
 
-import { fake } from '../../../../test/fake-api-response';
+import { fake } from '../../../../../testing/fake-api-response';
 import { of } from 'rxjs/internal/observable/of';
 import { Observable } from 'rxjs';
 import { Listing } from 'projects/giv-web-app/src/app/shared/models/listing/listing.model';

@@ -1,5 +1,5 @@
 import { ListingCategory } from './listing-category.model';
-import { fake } from '../../../test/fake-api-response';
+import { fake } from '../../../../testing/fake-api-response';
 import { ListingImage } from '../listing-image/listing-image.model';
 import { Listing } from '../listing/listing.model';
 

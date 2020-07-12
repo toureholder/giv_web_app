@@ -1,5 +1,5 @@
 import { ListingImage, IListingImage } from './listing-image.model';
-import { fake } from '../../../test/fake-api-response';
+import { fake } from '../../../../testing/fake-api-response';
 
 describe('ListingImage Tests', () => {
   const fakekApiResponse = fake.homeCategoriesList;

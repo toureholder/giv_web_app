@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 import { ListingCategoryApi } from './listing-category.api';
-import { fake } from '../../../../test/fake-api-response';
+import { fake } from '../../../../../testing/fake-api-response';
 import { ListingImage } from 'projects/giv-web-app/src/app/shared/models/listing-image/listing-image.model';
 import { Listing } from 'projects/giv-web-app/src/app/shared/models/listing/listing.model';
 import { ListingCategory } from 'projects/giv-web-app/src/app/shared/models/listing-category/listing-category.model';
