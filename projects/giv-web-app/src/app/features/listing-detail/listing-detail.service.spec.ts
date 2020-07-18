@@ -26,14 +26,14 @@ describe('ListingDetailService', () => {
   });
 
   it('get listing from repository', () => {
-    //Arrange / Given
+    // Arrange / Given
     const fakeListing = Listing.getOneFake(23);
     mockRepository.getListing.and.returnValue(of(fakeListing));
 
-    //Act / When
+    // Act / When
     const observable: Observable<Listing> = service.getListing(23);
 
-    //Assert / Then
+    // Assert / Then
     observable.subscribe((data) => {
       expect(data).toBeInstanceOf(Listing);
 

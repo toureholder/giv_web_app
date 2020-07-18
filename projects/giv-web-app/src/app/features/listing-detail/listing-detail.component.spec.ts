@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ListingDetailComponent } from './listing-detail.component';
-import { ListingRepository } from '../../core/repositories/listing/listing.repository';
-import { of, Observable } from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+import { ActivatedRouteStub } from '../../../testing/activated-route-stub';
 import { Listing } from '../../shared/models/listing/listing.model';
+import { ListingDetailComponent } from './listing-detail.component';
 import { ListingDetailService } from './listing-detail.service';
 
 describe('ListingDetailComponent', () => {
@@ -11,18 +11,24 @@ describe('ListingDetailComponent', () => {
   let fixture: ComponentFixture<ListingDetailComponent>;
   let template: HTMLElement;
   let mockService: jasmine.SpyObj<ListingDetailService>;
+  let activatedRouteStub: ActivatedRouteStub;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     mockService = jasmine.createSpyObj<ListingDetailService>(
       'ListingDetailService',
       ['getListing']
     );
 
+    activatedRouteStub = new ActivatedRouteStub({ id: '20' });
+
     TestBed.configureTestingModule({
-      providers: [{ provide: ListingDetailService, useValue: mockService }],
+      providers: [
+        { provide: ListingDetailService, useValue: mockService },
+        { provide: ActivatedRoute, useValue: activatedRouteStub },
+      ],
       declarations: [ListingDetailComponent],
-    }).compileComponents();
-  }));
+    });
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ListingDetailComponent);
@@ -64,18 +70,37 @@ describe('ListingDetailComponent', () => {
 
   describe('data flow', () => {
     it('should get listing from service', () => {
-      //Arrange / Given
+      // Arrange / Given
       const fakeListing = Listing.getOneFake(23);
       mockService.getListing.and.returnValue(of(fakeListing));
 
-      //Act / When
+      // Act / When
       fixture.detectChanges();
 
-      //Assert / Then
-      expect(component.listing).toEqual(
-        jasmine.objectContaining<Listing>({
-          ...fakeListing,
-        })
+      // Assert / Then
+      activatedRouteStub.paramMap.subscribe((map) =>
+        // Then
+        expect(component.listing).toEqual(
+          jasmine.objectContaining<Listing>({
+            ...fakeListing,
+          })
+        )
+      );
+    });
+  });
+
+  describe('routing params', () => {
+    it('should fetch listing that corresponds to the "id" paramater', () => {
+      // Given
+      const fakeListing = Listing.getOneFake(23);
+      mockService.getListing.and.returnValue(of(fakeListing));
+
+      // When
+      fixture.detectChanges();
+
+      activatedRouteStub.paramMap.subscribe((map) =>
+        // Then
+        expect(component.listingId).toBe(20)
       );
     });
   });

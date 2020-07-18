@@ -9,6 +9,7 @@ describe('FeaturedListingImageComponent', () => {
   let component: FeaturedListingImageComponent;
   let template: HTMLElement;
   let featuredImage: ListingImage | undefined;
+  const fakeListing = Listing.getOneFake();
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -16,14 +17,14 @@ describe('FeaturedListingImageComponent', () => {
       declarations: [FeaturedListingImageComponent],
     });
 
-    //Arrange / Given
+    // Arrange / Given
     fixture = TestBed.createComponent(FeaturedListingImageComponent);
     component = fixture.componentInstance;
     template = fixture.nativeElement;
-    component.listing = Listing.getOneFake();
+    component.listing = fakeListing;
     featuredImage = component.listing.featuredImage;
 
-    //Act / When
+    // Act / When
     fixture.detectChanges();
   });
 
@@ -33,6 +34,8 @@ describe('FeaturedListingImageComponent', () => {
 
   it('should have a link to listing detail', () => {
     const a = template.querySelector('a') as any;
-    expect(template.querySelector('[href="/listing/1"]')).toBeTruthy();
+    expect(
+      template.querySelector(`[href="/listing/${fakeListing.id}"]`)
+    ).toBeTruthy();
   });
 });

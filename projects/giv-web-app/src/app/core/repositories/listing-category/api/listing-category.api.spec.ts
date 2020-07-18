@@ -18,14 +18,14 @@ describe('Base Api Tests', () => {
   });
 
   it('should return array of listing categories', () => {
-    //Arrange / Given
+    // Arrange / Given
     mockHttpClient.get.and.returnValue(of(fakekApiResponse));
 
     const firstCategoryJson = fakekApiResponse[0];
     const firstListingJson = firstCategoryJson['listings'][0];
     const firstListingImageJson = firstListingJson['listing_images'][0];
 
-    //Assert / Then
+    // Assert / Then
     const firstlistingImage = jasmine.objectContaining<ListingImage>({
       url: firstListingImageJson['url'],
       position: firstListingImageJson['position'],

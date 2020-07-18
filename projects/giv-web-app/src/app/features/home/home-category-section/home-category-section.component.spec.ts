@@ -33,45 +33,45 @@ describe('HomeCategorySectionComponent', () => {
   });
 
   it("should render listings' featured images", () => {
-    //Arrange / Given
+    // Arrange / Given
     component.category = ListingCategory.getOneFake({
       numberOfListings: numberOfListings,
     });
 
-    //Act / When
+    // Act / When
     fixture.detectChanges();
 
-    //Assert / Then
+    // Assert / Then
     expect(template.querySelectorAll('giv-featured-listing-image').length).toBe(
       component.category.listings.length
     );
   });
 
   it('should set a data-index on each image div', () => {
-    //Arrange / Given
+    // Arrange / Given
     component.category = ListingCategory.getOneFake({
       numberOfListings: numberOfListings,
     });
 
-    //Act / When
+    // Act / When
     fixture.detectChanges();
 
-    //Assert / Then
+    // Assert / Then
     for (let index = 0; index < component.listings.length; index++) {
       expect(template.querySelector(`[data-index="${index}"]`)).toBeTruthy();
     }
   });
 
   it('should should render only the first 6 listings', () => {
-    //Arrange / Given
+    // Arrange / Given
     component.category = ListingCategory.getOneFake({
       numberOfListings: 10,
     });
 
-    //Act / When
+    // Act / When
     fixture.detectChanges();
 
-    //Assert / Then
+    // Assert / Then
     expect(component.category.listings.length).toBe(10);
     expect(template.querySelectorAll('giv-featured-listing-image').length).toBe(
       6
@@ -79,14 +79,14 @@ describe('HomeCategorySectionComponent', () => {
   });
 
   it('should mantain template option if received as argument', () => {
-    //Arrange / Given
+    // Arrange / Given
     component.category = ListingCategory.getOneFake({
       numberOfListings: numberOfListings,
     });
 
     component.templateOption = '3';
 
-    //Act / When
+    // Act / When
     fixture.detectChanges();
 
     //Then

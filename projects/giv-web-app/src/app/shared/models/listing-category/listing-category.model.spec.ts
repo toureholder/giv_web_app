@@ -7,13 +7,13 @@ describe('ListingCategory Tests', () => {
   const fakekApiResponse = fake.homeCategoriesList;
 
   it('should be able to deserialize a json object', () => {
-    //Arrange / Given
+    // Arrange / Given
     const json = fakekApiResponse[0];
 
-    //Act / When
+    // Act / When
     const deserialized = ListingCategory.fromJson(json);
 
-    //Assert / Then
+    // Assert / Then
     const firstListingJson = json['listings'][0];
     const firstListingImageJson = firstListingJson['listing_images'][0];
 
@@ -41,18 +41,18 @@ describe('ListingCategory Tests', () => {
   });
 
   it('should be able to deserialize a list of json objects', () => {
-    //Arrange / Given
+    // Arrange / Given
     const json = fakekApiResponse;
 
-    //Act / When
+    // Act / When
     const deserialized = ListingCategory.fromJsonListToList(json);
 
-    //Assert / Then
+    // Assert / Then
     const firstCategoryJson = fakekApiResponse[0];
     const firstListingJson = firstCategoryJson['listings'][0];
     const firstListingImageJson = firstListingJson['listing_images'][0];
 
-    //Assert / Then
+    // Assert / Then
     const firstlistingImage = jasmine.objectContaining<ListingImage>({
       url: firstListingImageJson['url'],
       position: firstListingImageJson['position'],
@@ -79,15 +79,15 @@ describe('ListingCategory Tests', () => {
   });
 
   it('should be able to generate fake category with n fake listings', () => {
-    //Arrange / Given
+    // Arrange / Given
     const numberOfListings = 10;
 
-    //Act / When
+    // Act / When
     const category = ListingCategory.getOneFake({
       numberOfListings: numberOfListings,
     });
 
-    //Assert / Then
+    // Assert / Then
     expect(category.listings.length).toBe(numberOfListings);
   });
 });

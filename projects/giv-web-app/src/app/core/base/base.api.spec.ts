@@ -23,27 +23,27 @@ describe('BaseApi', () => {
     mockHttpClient = jasmine.createSpyObj<HttpClient>('HttpClient', ['get']);
     api = new ExampleApi(mockHttpClient);
 
-    //Arrange / Given
+    // Arrange / Given
     path = '/me';
     fakeApiResponse = { name: 'Tester' };
     mockHttpClient.get.and.returnValue(of(fakeApiResponse));
 
-    //Act / When
+    // Act / When
     response = api.getData(path);
   });
 
   it('should get data httpClient', () => {
-    //Assert / Then
+    // Assert / Then
     response.subscribe((data) => expect(data).toEqual(fakeApiResponse));
   });
 
   it('should call HttpClient.get', () => {
-    //Assert / Then
+    // Assert / Then
     expect(mockHttpClient.get).toHaveBeenCalledTimes(1);
   });
 
   it('should concatenate path with base url', () => {
-    //Assert / Then
+    // Assert / Then
     expect(mockHttpClient.get).toHaveBeenCalledWith(BaseApi.BASE_URL + path);
   });
 });

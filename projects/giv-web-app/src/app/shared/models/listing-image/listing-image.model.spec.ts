@@ -18,7 +18,7 @@ describe('ListingImage Tests', () => {
   });
 
   it('should be able to deserialize a list of json objects', () => {
-    //Arrange / Given
+    // Arrange / Given
     const json = [
       {
         id: 1509,
@@ -34,10 +34,10 @@ describe('ListingImage Tests', () => {
       },
     ];
 
-    //Act / When
+    // Act / When
     const listingImages = ListingImage.fromJsonListtoList(json);
 
-    //Assert / Then
+    // Assert / Then
     expect(listingImages).toEqual(
       jasmine.arrayContaining([
         jasmine.objectContaining({
@@ -55,13 +55,13 @@ describe('ListingImage Tests', () => {
   });
 
   it('shoukd be able to generate a fake list with n items', () => {
-    //Arrange / Given
+    // Arrange / Given
     const numberOfItems = 10;
 
-    //Act / When
+    // Act / When
     const items: ListingImage[] = ListingImage.getFakeList(numberOfItems);
 
-    //Assert / Then
+    // Assert / Then
     expect(items.length).toBe(numberOfItems);
   });
 });

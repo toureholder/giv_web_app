@@ -24,15 +24,15 @@ describe('ListingService', () => {
   });
 
   it('should get listing by id from api', () => {
-    //Arrange / Given
+    // Arrange / Given
     const id = 271;
     const fakeListing = Listing.getOneFake(id);
     mockApi.fetchOne.and.returnValue(of(fakeListing));
 
-    //Act / When
+    // Act / When
     const observable: Observable<Listing> = repository.getListing(1);
 
-    //Assert / Then
+    // Assert / Then
     observable.subscribe((data) => {
       expect(data).toBeInstanceOf(Listing);
       expect(data).toEqual(jasmine.objectContaining<Listing>(fakeListing));

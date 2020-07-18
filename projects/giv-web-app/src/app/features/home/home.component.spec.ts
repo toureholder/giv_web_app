@@ -49,11 +49,11 @@ describe('HomeComponent', () => {
   });
 
   it('getCategoriesRequest should be in LOADING state during request', () => {
-    //Act / When
+    // Act / When
     fixture.detectChanges();
     component.getCategoriesRequest.state = AsyncActionState.LOADING;
 
-    //Assert / Then
+    // Assert / Then
     expect(component.getCategoriesRequest.isLoading).toBe(true);
   });
 
@@ -71,20 +71,20 @@ describe('HomeComponent', () => {
   });
 
   it('should render loading state while loading', () => {
-    //Act / When
+    // Act / When
     fixture.detectChanges();
     component.getCategoriesRequest.state = AsyncActionState.LOADING;
     fixture.detectChanges();
 
-    //Assert / Then
+    // Assert / Then
     expect(template.querySelector('[data-test="loading-state"]')).toBeTruthy();
   });
 
   it('should not render loading when service call completes', () => {
-    //Act / When
+    // Act / When
     fixture.detectChanges();
 
-    //Assert / Then
+    // Assert / Then
     expect(template.querySelector('[data-test="loading-state"]')).toBeFalsy();
   });
 

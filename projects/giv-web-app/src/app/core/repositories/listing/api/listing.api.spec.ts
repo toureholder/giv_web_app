@@ -25,14 +25,14 @@ describe('ListingApi', () => {
   });
 
   it('#getOne should get one listing', () => {
-    //Arrange / Given
+    // Arrange / Given
     const apiResponse = fake.listing;
     mockHttpClient.get.and.returnValue(of(apiResponse));
 
-    //Act / When
+    // Act / When
     const observable: Observable<Listing> = api.fetchOne(1);
 
-    //Assert / Then
+    // Assert / Then
     observable.subscribe((data) => {
       expect(data).toBeInstanceOf(Listing);
 

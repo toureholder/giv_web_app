@@ -14,7 +14,7 @@ export class ListingApi extends BaseApi {
   }
 
   fetchOne(id: number): Observable<Listing> {
-    return this.get(`/listing/${id}`).pipe(
+    return this.get(`/listings/${id}`).pipe(
       map((response) => Listing.fromJson(response))
     );
   }
