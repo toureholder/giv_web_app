@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ListingCategory } from '../../../shared/models/listing-category/listing-category.model';
-import { Listing } from '../../../shared/models/listing/listing.model';
+import { ListingCategory } from '../../../../shared/models/listing-category/listing-category.model';
+import { Listing } from '../../../../shared/models/listing/listing.model';
 
 @Component({
   selector: 'giv-home-category-section',
@@ -25,7 +25,7 @@ export class HomeCategorySectionComponent implements OnInit {
 
   private getRandomTemplateOption(): string {
     const options = ['1', '2', '3', '4', '5', '6'];
-    return options[~~(Math.random() * options.length)];
+    return options[Math.floor(Math.random() * options.length)];
   }
 
   private prepareListings() {

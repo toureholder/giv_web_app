@@ -25,7 +25,7 @@ export class ListingImage implements IListingImage {
   }
 
   static fromJson(json: JsonData): ListingImage {
-    return new ListingImage({ url: json['url'], position: json['position'] });
+    return new ListingImage({ url: json.url, position: json.position });
   }
 
   static getFakeList(count?: number): ListingImage[] {

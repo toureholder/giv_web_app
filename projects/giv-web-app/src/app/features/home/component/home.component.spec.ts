@@ -1,12 +1,12 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { FeaturedListingImageComponent } from '../../shared/components/featured-listing-image/featured-listing-image.component';
-import { ListingCategory } from '../../shared/models/listing-category/listing-category.model';
-import { HomeCategorySectionComponent } from './home-category-section/home-category-section.component';
+import { FeaturedListingImageComponent } from '../../../shared/components/featured-listing-image/featured-listing-image.component';
+import { ListingCategory } from '../../../shared/models/listing-category/listing-category.model';
+import { HomeCategorySectionComponent } from '../components/home-category-section/home-category-section.component';
 import { HomeComponent } from './home.component';
-import { HomeService } from './home.service';
-import { AsyncActionState } from '../../shared/models/component_async_action/component_async_action';
-import { HomeLoadingStateComponent } from './home-loading-state/home-loading-state.component';
+import { HomeService } from '../service/home.service';
+import { AsyncActionState } from '../../../shared/models/component_async_action/component_async_action';
+import { HomeLoadingStateComponent } from '../components/home-loading-state/home-loading-state.component';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HomeComponent', () => {
