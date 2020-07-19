@@ -1,7 +1,7 @@
 import { HomeService } from './home.service';
-import { ListingCategoryRepository } from '../../core/repositories/listing-category/listing-category.repository';
+import { ListingCategoryRepository } from '../../../core/repositories/listing-category/listing-category.repository';
 import { of } from 'rxjs';
-import { ListingCategory } from '../../shared/models/listing-category/listing-category.model';
+import { ListingCategory } from '../../../shared/models/listing-category/listing-category.model';
 
 describe('home service tests', () => {
   let service: HomeService;

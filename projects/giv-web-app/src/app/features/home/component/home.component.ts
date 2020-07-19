@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ListingCategory } from '../../shared/models/listing-category/listing-category.model';
-import { HomeService } from './home.service';
+import { ListingCategory } from '../../../shared/models/listing-category/listing-category.model';
+import { HomeService } from '../service/home.service';
 import {
   ComponentAsyncAction,
   AsyncActionState,
-} from '../../shared/models/component_async_action/component_async_action';
+} from '../../../shared/models/component_async_action/component_async_action';
 
 @Component({
   selector: 'giv-home',

@@ -8,8 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "format:test": "prettier projects/**/*.{ts,json,md,scss} --list-different",
-    "format:write": "prettier projects/**/*.{ts,json,md,scss} --write",
+    "format:test": "prettier projects/**/*.{html,js,ts,json,css} --list-different",
+    "format:write": "prettier projects/**/*.{html,js,ts,json,css} --write",
     "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer ./dist/giv-web-app/stats-es2015.json"
   },
   "private": true,

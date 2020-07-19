@@ -5,7 +5,7 @@ describe('ListingImage Tests', () => {
   const fakekApiResponse = fake.homeCategoriesList;
 
   it('should be able to deserialize a json object', () => {
-    const json = fakekApiResponse[0]['listings'][0]['listing_images'][0];
+    const json = fakekApiResponse[0].listings[0].listing_images[0];
 
     const expectedObject: IListingImage = {
       url: json.url,

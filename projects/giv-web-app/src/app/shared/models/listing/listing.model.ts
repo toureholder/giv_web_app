@@ -43,19 +43,19 @@ export class Listing implements IListing {
   }
 
   static fromJsonListtoList(json: any[]): Listing[] {
-    return json['map']((obj) => Listing.fromJson(obj));
+    return json.map((obj) => Listing.fromJson(obj));
   }
 
   static fromJson(json: any) {
     const listingImages = ListingImage.fromJsonListtoList(
-      json['listing_images']
+      json.listing_images
     );
 
     return new Listing({
-      id: json['id'],
-      title: json['title'],
-      description: json['description'],
-      listingImages: listingImages,
+      id: json.id,
+      title: json.title,
+      description: json.description,
+      listingImages,
     });
   }
 

@@ -30,11 +30,11 @@ export class ListingCategory implements IListingCategory {
   }
 
   static fromJson(json: any): ListingCategory {
-    const listings = Listing.fromJsonListtoList(json['listings']);
+    const listings = Listing.fromJsonListtoList(json.listings);
     return new ListingCategory({
-      id: json['id'],
-      simpleName: json['simple_name'],
-      listings: listings,
+      id: json.id,
+      simpleName: json.simple_name,
+      listings,
     });
   }
 
@@ -52,7 +52,7 @@ export class ListingCategory implements IListingCategory {
     return new ListingCategory({
       id: 1,
       simpleName: 'Fake Category',
-      listings: listings,
+      listings,
     });
   }
 }

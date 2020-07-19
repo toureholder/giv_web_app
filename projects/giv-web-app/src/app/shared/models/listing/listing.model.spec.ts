@@ -17,8 +17,8 @@ describe('Listing Model Tests', () => {
 
   it('should be able to deserialize a json object', () => {
     // Arrange / Given
-    const json = fakekApiResponse[0]['listings'][0];
-    const firstListingImageJson = json['listing_images'][0];
+    const json = fakekApiResponse[0].listings[0];
+    const firstListingImageJson = json.listing_images[0];
 
     // Act / When
     const deserialized = Listing.fromJson(json);
@@ -31,8 +31,8 @@ describe('Listing Model Tests', () => {
         description: json.description,
         listingImages: jasmine.arrayContaining([
           jasmine.objectContaining({
-            url: firstListingImageJson['url'],
-            position: firstListingImageJson['position'],
+            url: firstListingImageJson.url,
+            position: firstListingImageJson.position,
           }),
         ]),
       })
@@ -41,9 +41,9 @@ describe('Listing Model Tests', () => {
 
   it('should be able to deserialize a list of json objects', () => {
     // Arrange / Given
-    const json = fakekApiResponse[0]['listings'];
+    const json = fakekApiResponse[0].listings;
     const firstListingJson = json[0];
-    const firstListingImageJson = firstListingJson['listing_images'][0];
+    const firstListingImageJson = firstListingJson.listing_images[0];
 
     // Act / When
     const listings = Listing.fromJsonListtoList(json);
@@ -52,13 +52,13 @@ describe('Listing Model Tests', () => {
     expect(listings).toEqual(
       jasmine.arrayContaining([
         jasmine.objectContaining({
-          id: firstListingJson['id'],
-          title: firstListingJson['title'],
-          description: firstListingJson['description'],
+          id: firstListingJson.id,
+          title: firstListingJson.title,
+          description: firstListingJson.description,
           listingImages: jasmine.arrayContaining([
             jasmine.objectContaining({
-              url: firstListingImageJson['url'],
-              position: firstListingImageJson['position'],
+              url: firstListingImageJson.url,
+              position: firstListingImageJson.position,
             }),
           ]),
         }),

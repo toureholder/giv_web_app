@@ -22,27 +22,27 @@ describe('Base Api Tests', () => {
     mockHttpClient.get.and.returnValue(of(fakekApiResponse));
 
     const firstCategoryJson = fakekApiResponse[0];
-    const firstListingJson = firstCategoryJson['listings'][0];
-    const firstListingImageJson = firstListingJson['listing_images'][0];
+    const firstListingJson = firstCategoryJson.listings[0];
+    const firstListingImageJson = firstListingJson.listing_images[0];
 
     // Assert / Then
     const firstlistingImage = jasmine.objectContaining<ListingImage>({
-      url: firstListingImageJson['url'],
-      position: firstListingImageJson['position'],
+      url: firstListingImageJson.url,
+      position: firstListingImageJson.position,
     });
 
     const firstlistingImageList = jasmine.arrayContaining([firstlistingImage]);
 
     const firstListing = jasmine.objectContaining<Listing>({
-      id: firstListingJson['id'],
-      title: firstListingJson['title'],
-      description: firstListingJson['description'],
+      id: firstListingJson.id,
+      title: firstListingJson.title,
+      description: firstListingJson.description,
       listingImages: firstlistingImageList,
     });
 
     const firstCategory = jasmine.objectContaining<ListingCategory>({
-      id: firstCategoryJson['id'],
-      simpleName: firstCategoryJson['simple_name'],
+      id: firstCategoryJson.id,
+      simpleName: firstCategoryJson.simple_name,
       listings: jasmine.arrayContaining([firstListing]),
     });
 

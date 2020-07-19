@@ -1,8 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FeaturedListingImageComponent } from '../../../shared/components/featured-listing-image/featured-listing-image.component';
-import { ListingCategory } from '../../../shared/models/listing-category/listing-category.model';
+import { FeaturedListingImageComponent } from '../../../../shared/components/featured-listing-image/featured-listing-image.component';
+import { ListingCategory } from '../../../../shared/models/listing-category/listing-category.model';
 import { HomeCategorySectionComponent } from './home-category-section.component';
-import { Listing } from '../../../shared/models/listing/listing.model';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HomeCategorySectionComponent', () => {
@@ -32,10 +31,10 @@ describe('HomeCategorySectionComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it("should render listings' featured images", () => {
+  it('should render listings\' featured images', () => {
     // Arrange / Given
     component.category = ListingCategory.getOneFake({
-      numberOfListings: numberOfListings,
+      numberOfListings,
     });
 
     // Act / When
@@ -50,7 +49,7 @@ describe('HomeCategorySectionComponent', () => {
   it('should set a data-index on each image div', () => {
     // Arrange / Given
     component.category = ListingCategory.getOneFake({
-      numberOfListings: numberOfListings,
+      numberOfListings,
     });
 
     // Act / When
@@ -81,7 +80,7 @@ describe('HomeCategorySectionComponent', () => {
   it('should mantain template option if received as argument', () => {
     // Arrange / Given
     component.category = ListingCategory.getOneFake({
-      numberOfListings: numberOfListings,
+      numberOfListings,
     });
 
     component.templateOption = '3';
@@ -89,7 +88,7 @@ describe('HomeCategorySectionComponent', () => {
     // Act / When
     fixture.detectChanges();
 
-    //Then
+    // Then
     expect(component.computedTemplateOption).toBe('3');
     expect(template.querySelector('[data-template="3"]')).toBeTruthy();
   });
