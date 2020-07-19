@@ -47,9 +47,7 @@ export class Listing implements IListing {
   }
 
   static fromJson(json: any) {
-    const listingImages = ListingImage.fromJsonListtoList(
-      json.listing_images
-    );
+    const listingImages = ListingImage.fromJsonListtoList(json.listing_images);
 
     return new Listing({
       id: json.id,
