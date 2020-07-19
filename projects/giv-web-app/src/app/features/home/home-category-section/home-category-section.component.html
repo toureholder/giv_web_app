@@ -1,0 +1,17 @@
+<h2>{{ category.simpleName }}</h2>
+
+<div
+  data-test="image-grid"
+  class="image-grid"
+  [attr.data-template]="computedTemplateOption"
+>
+  <div
+    *ngFor="let listing of listings; index as i"
+    class="image-div"
+    [attr.data-index]="i"
+  >
+    <giv-featured-listing-image
+      [listing]="listing"
+    ></giv-featured-listing-image>
+  </div>
+</div>
