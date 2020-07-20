@@ -1,0 +1,11 @@
+:root {
+  /* fonts */
+  --giv-font-size-title: 2.4rem;
+  --giv-font-size-paragraph: 1.4rem;
+
+  /* spacing */
+  --giv-default-vertical-spacing: 4.8rem;
+
+  /* misc */
+  --giv-default-border-radius: 5px;
+}

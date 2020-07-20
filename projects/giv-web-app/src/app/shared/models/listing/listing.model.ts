@@ -17,7 +17,7 @@ export class Listing implements IListing {
     this._id = id;
     this._title = title;
     this._description = description;
-    this._listingImages = listingImages;
+    this._listingImages = this.sortByPostion(listingImages);
   }
 
   public get id(): number {
@@ -39,7 +39,7 @@ export class Listing implements IListing {
   get featuredImage(): ListingImage | undefined {
     return this.listingImages.length === 0
       ? undefined
-      : this.listingImages.sort((a, b) => a.position - b.position)[0];
+      : this.sortByPostion(this.listingImages)[0];
   }
 
   static fromJsonListtoList(json: any[]): Listing[] {
@@ -77,5 +77,9 @@ export class Listing implements IListing {
     }
 
     return list;
+  }
+
+  private sortByPostion(images: ListingImage[]): ListingImage[] {
+    return images.sort((a, b) => a.position - b.position);
   }
 }

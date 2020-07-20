@@ -1,5 +1,42 @@
-<div data-test="carousel">carousel</div>
-<div data-test="title">title</div>
-<div data-test="description">description</div>
-<div data-test="user">user</div>
-<div data-test="report">report</div>
+<!-- LOADING -->
+<div data-test="loading-state" *ngIf="getListingRquest.isLoading == true">
+  loading
+</div>
+
+<!-- SUCCESS -->
+<div
+  data-test="success-state"
+  *ngIf="getListingRquest.isSuccess == true"
+  class="giv-container"
+>
+  <div class="giv-listing-detail-grid">
+    <div class="giv-carousel-wrapper">
+      <div data-test="carousel" class="giv-carousel-container">
+        <swiper [config]="swiperConfig">
+          <div
+            data-test="slide"
+            *ngFor="let image of listing.listingImages; index as i"
+          >
+            <img [src]="image.url" alt="" />
+          </div>
+        </swiper>
+      </div>
+    </div>
+
+    <div class="giv-listing-info">
+      <div data-test="title">
+        <h1>{{ listing.title }}</h1>
+      </div>
+
+      <div data-test="description">
+        <p>{{ listing.description }}</p>
+      </div>
+
+      <div data-test="user">user</div>
+
+      <div data-test="report">report</div>
+    </div>
+  </div>
+
+  <div class="giv-vertical-space"></div>
+</div>

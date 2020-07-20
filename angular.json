@@ -25,7 +25,8 @@
             ],
             "styles": [
               "projects/giv-web-app/src/styles/md-color-palette.css",
-              "projects/giv-web-app/src/styles/styles.css"
+              "projects/giv-web-app/src/styles/styles.css",
+              "projects/giv-web-app/src/styles/giv-variables.css"
             ],
             "scripts": []
           },
@@ -90,7 +91,8 @@
             ],
             "styles": [
               "projects/giv-web-app/src/styles/md-color-palette.css",
-              "projects/giv-web-app/src/styles/styles.css"
+              "projects/giv-web-app/src/styles/styles.css",
+              "projects/giv-web-app/src/styles/giv-variables.css"
             ],
             "scripts": []
           }

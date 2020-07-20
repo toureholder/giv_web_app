@@ -3,7 +3,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 3rem;
   height: 3rem;
-  margin-block-start: 5rem;
+  margin-block-start: var(--giv-default-vertical-spacing);
   margin-block-end: 2.075rem;
 }
 

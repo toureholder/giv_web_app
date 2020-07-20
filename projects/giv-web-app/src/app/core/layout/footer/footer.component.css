@@ -6,8 +6,9 @@ footer {
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template: 1fr / repeat(3, 1fr);
+  align-items: center;
+  grid-template: repeat(3, 1fr) / 1fr;
+  padding: 2.4rem 1.2rem;
 }
 
 .footer-content div {
@@ -18,11 +19,10 @@ footer {
   font-size: 1.2rem;
 }
 
-@media only screen and (max-width: 768px) {
+/* TODO: Should be mobile first */
+@media only screen and (min-width: 768px) {
   .footer-content {
     display: grid;
-    align-items: center;
-    grid-template: repeat(3, 1fr) / 1fr;
-    padding: 2.4rem 1.2rem;
+    grid-template: 1fr / repeat(3, 1fr);
   }
 }

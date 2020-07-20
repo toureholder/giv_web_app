@@ -1,14 +1,18 @@
 <div class="giv-container">
+  <!-- LOADING -->
   <giv-home-loading-state
     *ngIf="getCategoriesRequest.isLoading === true"
     data-test="loading-state"
   >
   </giv-home-loading-state>
 
-  <giv-home-category-section
-    *ngFor="let category of categories; index as i"
-    [category]="category"
-    data-test="home-category"
-    [templateOption]="i === 0 ? '1' : undefined"
-  ></giv-home-category-section>
+  <!-- SUCCESS -->
+  <div data-test="success-state" *ngIf="getCategoriesRequest.isSuccess == true">
+    <giv-home-category-section
+      *ngFor="let category of categories; index as i"
+      [category]="category"
+      data-test="home-category"
+      [templateOption]="i === 0 ? '1' : undefined"
+    ></giv-home-category-section>
+  </div>
 </div>

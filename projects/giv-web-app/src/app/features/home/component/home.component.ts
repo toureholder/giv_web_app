@@ -14,7 +14,7 @@ import {
 })
 export class HomeComponent implements OnInit {
   categories: ListingCategory[];
-  getCategoriesRequest: ComponentAsyncAction = new ComponentAsyncAction();
+  getCategoriesRequest = new ComponentAsyncAction();
 
   constructor(private homeService: HomeService) {}
 

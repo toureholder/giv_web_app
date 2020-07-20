@@ -12,7 +12,6 @@ body {
 
 :root {
   font-size: 62.5%;
-  --giv-default-border-radius: 5px;
 }
 
 .giv-container {
@@ -23,4 +22,71 @@ body {
   padding-right: 2.4rem;
   padding-left: 2.4rem;
   height: 100%;
+}
+
+/* swiper */
+
+.giv-carousel-container swiper > .swiper.s-wrapper .swiper-button-next,
+.giv-carousel-container swiper > .swiper.s-wrapper .swiper-button-prev {
+  visibility: hidden;
+}
+
+/* Desktop */
+@media only screen and (min-width: 768px) {
+  .giv-carousel-container swiper > .swiper.s-wrapper .swiper-button-next,
+  .giv-carousel-container swiper > .swiper.s-wrapper .swiper-button-prev {
+    color: white;
+    visibility: visible;
+  }
+
+  .giv-carousel-container swiper > .swiper.s-wrapper .swiper-button-prev,
+  .giv-carousel-container swiper > .swiper.s-wrapper .swiper-button-prev:after {
+    font-family: 'Material Icons';
+    content: 'navigate_before';
+  }
+
+  .giv-carousel-container swiper > .swiper.s-wrapper .swiper-button-next,
+  .giv-carousel-container swiper > .swiper.s-wrapper .swiper-button-next:after {
+    font-family: 'Material Icons';
+    content: 'navigate_next';
+  }
+}
+
+.giv-carousel-container
+  swiper
+  > .swiper.s-wrapper
+  .swiper-pagination
+  .swiper-pagination-handle
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: white;
+}
+
+.giv-carousel-container
+  swiper
+  > .swiper.s-wrapper
+  .swiper-pagination
+  .swiper-pagination-handle
+  .swiper-pagination-bullet.swiper-pagination-bullet-first,
+.giv-carousel-container
+  swiper
+  > .swiper.s-wrapper
+  .swiper-pagination
+  .swiper-pagination-handle
+  .swiper-pagination-bullet.swiper-pagination-bullet-last {
+  border: none;
+}
+
+.giv-carousel-container
+  swiper
+  > .swiper.s-wrapper.swiper-container-horizontal
+  > .swiper-pagination
+  .swiper-pagination-handle
+  .swiper-pagination-bullet.swiper-pagination-bullet-first,
+.giv-carousel-container
+  swiper
+  > .swiper.s-wrapper.swiper-container-horizontal
+  > .swiper-pagination
+  .swiper-pagination-handle
+  .swiper-pagination-bullet.swiper-pagination-bullet-last {
+  margin: 0;
 }

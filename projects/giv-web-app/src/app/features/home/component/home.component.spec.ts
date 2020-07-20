@@ -91,6 +91,8 @@ describe('HomeComponent', () => {
   it('should render list of categories when service call completes', () => {
     fixture.detectChanges();
 
+    expect(template.querySelector('[data-test="success-state"]')).toBeTruthy();
+
     expect(
       template.querySelectorAll('[data-test="home-category"]').length
     ).toBe(fakeList.length);

@@ -1,10 +1,11 @@
 import { fake } from '../../../../testing/fake-api-response';
 import { Listing } from './listing.model';
+import { ListingImage } from '../listing-image/listing-image.model';
 
 describe('Listing Model Tests', () => {
   const fakekApiResponse = fake.homeCategoriesList;
 
-  it('"featuredImage should be image with lowest position', () => {
+  it('featuredImage should be image with lowest position', () => {
     // Arrange / Given
     const model = Listing.getOneFake();
 
@@ -15,7 +16,32 @@ describe('Listing Model Tests', () => {
     expect(featuredImage?.position).toBe(0);
   });
 
-  it('should be able to deserialize a json object', () => {
+  it('should order its images by position when constructed', () => {
+    // Arrange / Given
+    const unorderedImages = [
+      new ListingImage({ url: 'https://picsum.photos/300', position: 3 }),
+      new ListingImage({ url: 'https://picsum.photos/100', position: 1 }),
+      new ListingImage({ url: 'https://picsum.photos/200', position: 2 }),
+      new ListingImage({ url: 'https://picsum.photos/101', position: 0 }),
+    ];
+
+    // Act / When
+    const newListing = new Listing({
+      id: 1,
+      title: 'New listing',
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incidicunt ut labore et dolore magna aliqua.',
+      listingImages: unorderedImages,
+    });
+
+    // Assert / Then
+    expect(newListing.listingImages[0].position).toEqual(0);
+    expect(newListing.listingImages[1].position).toEqual(1);
+    expect(newListing.listingImages[2].position).toEqual(2);
+    expect(newListing.listingImages[3].position).toEqual(3);
+  });
+
+  it('should have a static method to deserialize a json object', () => {
     // Arrange / Given
     const json = fakekApiResponse[0].listings[0];
     const firstListingImageJson = json.listing_images[0];
@@ -39,7 +65,7 @@ describe('Listing Model Tests', () => {
     );
   });
 
-  it('should be able to deserialize a list of json objects', () => {
+  it('should have a static method to deserialize a list of json objects', () => {
     // Arrange / Given
     const json = fakekApiResponse[0].listings;
     const firstListingJson = json[0];
@@ -66,7 +92,7 @@ describe('Listing Model Tests', () => {
     );
   });
 
-  it('shoukd be able to generate a fake list with n items', () => {
+  it('shoukd have a static method to generate a fake list with n items', () => {
     // Arrange / Given
     const numberOfItems = 10;
 
