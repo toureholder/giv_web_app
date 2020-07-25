@@ -1,6 +1,7 @@
 import { fake } from '../../../../testing/fake-api-response';
 import { Listing } from './listing.model';
 import { ListingImage } from '../listing-image/listing-image.model';
+import { User } from '../user/user.model';
 
 describe('Listing Model Tests', () => {
   const fakekApiResponse = fake.homeCategoriesList;
@@ -32,6 +33,7 @@ describe('Listing Model Tests', () => {
       description:
         'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incidicunt ut labore et dolore magna aliqua.',
       listingImages: unorderedImages,
+      user: User.getOneFake(),
     });
 
     // Assert / Then

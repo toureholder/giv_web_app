@@ -109,6 +109,7 @@ describe('ListingDetailComponent', () => {
       it('should render the user', () => {
         const userElement = template.querySelector('[data-test="user"]');
         expect(userElement).toBeTruthy();
+        // expect(userElement?.innerHTML).toContain(fakeListing.user.name);
       });
 
       it('should render the report', () => {
