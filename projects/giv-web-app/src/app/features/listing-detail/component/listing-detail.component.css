@@ -36,6 +36,23 @@ p {
   font-size: 1.4rem;
 }
 
+.giv-user-block {
+  display: flex;
+  align-items: center;
+}
+
+.giv-user-avatar {
+  height: 36px;
+  width: 36px;
+  border-radius: 100px;
+  margin-right: 16px;
+}
+
+.giv-user-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 /* Desktop */
 @media only screen and (min-width: 768px) {
   .giv-listing-detail-grid {

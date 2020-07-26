@@ -8,6 +8,7 @@ import { ListingDetailService } from '../service/listing-detail.service';
 import { SharedModule } from '../../../shared/shared.module';
 import { AsyncActionState } from '../../../shared/models/component_async_action/component_async_action';
 import { AsyncAction } from 'rxjs/internal/scheduler/AsyncAction';
+import { fake } from 'projects/giv-web-app/src/testing/fake-api-response';
 
 describe('ListingDetailComponent', () => {
   let component: ListingDetailComponent;
@@ -106,10 +107,24 @@ describe('ListingDetailComponent', () => {
         );
       });
 
-      it('should render the user', () => {
-        const userElement = template.querySelector('[data-test="user"]');
-        expect(userElement).toBeTruthy();
-        // expect(userElement?.innerHTML).toContain(fakeListing.user.name);
+      describe('should render the user', () => {
+        const user = fakeListing.user;
+
+        it('should render the user name', () => {
+          const userNameElement = template.querySelector(
+            '[data-test="user-name"]'
+          );
+          expect(userNameElement).toBeTruthy();
+          expect(userNameElement?.innerHTML).toContain(user.name);
+        });
+
+        it('should render the user avatar', () => {
+          const userAvatarElement = template.querySelector(
+            'img[data-test="user-avatar"]'
+          ) as HTMLImageElement;
+          expect(userAvatarElement).toBeTruthy();
+          expect(userAvatarElement.src).toEqual(user.imageUrl);
+        });
       });
 
       it('should render the report', () => {

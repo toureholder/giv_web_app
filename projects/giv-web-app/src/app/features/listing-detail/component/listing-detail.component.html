@@ -32,7 +32,16 @@
         <p>{{ listing.description }}</p>
       </div>
 
-      <div data-test="user">{{ listing.user.name }}</div>
+      <div data-test="user" class="giv-user-block">
+        <img
+          data-test="user-avatar"
+          class="giv-user-avatar"
+          [src]="listing.user.imageUrl"
+        />
+        <span data-test="user-name" class="giv-user-name">
+          {{ listing.user.name }}</span
+        >
+      </div>
 
       <div data-test="report">report</div>
     </div>
