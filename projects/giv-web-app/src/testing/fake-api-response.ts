@@ -1,3 +1,5 @@
+// TODO: refator: rename object and properties and possibly tranform into json file
+
 export const fake = {
   homeCategoriesList: [
     {
@@ -124,7 +126,7 @@ export const fake = {
         },
         {
           id: 11,
-          title: 'His brother\'s keeper - Charles M. Sheldon',
+          title: "His brother's keeper - Charles M. Sheldon",
           description: 'Livro em ótimo estado de conservação.',
           geonames_city_id: '6324222',
           geonames_state_id: '3463504',
@@ -1198,5 +1200,19 @@ export const fake = {
         position: 0,
       },
     ],
+  },
+  getLocationDetails: {
+    country: {
+      id: '3469034',
+      name: 'Brasil',
+    },
+    state: {
+      id: '3463504',
+      name: 'Distrito Federal',
+    },
+    city: {
+      id: '6324222',
+      name: 'Brasília',
+    },
   },
 };

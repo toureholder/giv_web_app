@@ -1,7 +1,7 @@
 import { ListingImage, IListingImage } from './listing-image.model';
 import { fake } from '../../../../testing/fake-api-response';
 
-describe('ListingImage Tests', () => {
+describe('ListingImage model', () => {
   const fakekApiResponse = fake.homeCategoriesList;
 
   it('should be able to deserialize a json object', () => {

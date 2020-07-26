@@ -1,7 +1,7 @@
 import { fake } from '../../../../testing/fake-api-response';
 import { User } from './user.model';
 
-describe('User', () => {
+describe('User model', () => {
   it('should have a static method to deserialize json object', () => {
     // Arrange / Given
     const json = fake.listing.user;

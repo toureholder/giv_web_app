@@ -3,7 +3,7 @@ import { Listing } from './listing.model';
 import { ListingImage } from '../listing-image/listing-image.model';
 import { User } from '../user/user.model';
 
-describe('Listing Model Tests', () => {
+describe('Listing model', () => {
   const fakekApiResponse = fake.homeCategoriesList;
 
   it('featuredImage should be image with lowest position', () => {

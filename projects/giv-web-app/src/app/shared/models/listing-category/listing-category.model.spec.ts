@@ -3,7 +3,7 @@ import { fake } from '../../../../testing/fake-api-response';
 import { ListingImage } from '../listing-image/listing-image.model';
 import { Listing } from '../listing/listing.model';
 
-describe('ListingCategory Tests', () => {
+describe('ListingCategory model', () => {
   const fakekApiResponse = fake.homeCategoriesList;
 
   it('should be able to deserialize a json object', () => {
