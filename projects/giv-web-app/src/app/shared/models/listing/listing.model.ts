@@ -5,6 +5,9 @@ export interface IListing {
   id: number;
   title: string;
   description: string;
+  countryId: string | undefined;
+  stateId: string | undefined;
+  cityId: string | undefined;
   listingImages: ListingImage[];
   user: User;
 }
@@ -13,13 +16,28 @@ export class Listing implements IListing {
   private _id: number;
   private _title: string;
   private _description: string;
+  private _countryId: string | undefined;
+  private _stateId: string | undefined;
+  private _cityId: string | undefined;
   private _listingImages: ListingImage[];
   private _user: User;
 
-  constructor({ id, title, description, listingImages, user }: IListing) {
+  constructor({
+    id,
+    title,
+    description,
+    countryId,
+    stateId,
+    cityId,
+    listingImages,
+    user,
+  }: IListing) {
     this._id = id;
     this._title = title;
     this._description = description;
+    this._countryId = countryId;
+    this._stateId = stateId;
+    this._cityId = cityId;
     this._listingImages = this.sortByPostion(listingImages);
     this._user = user;
   }
@@ -34,6 +52,18 @@ export class Listing implements IListing {
 
   public get description(): string {
     return this._description;
+  }
+
+  public get cityId(): string | undefined {
+    return this._cityId;
+  }
+
+  public get stateId(): string | undefined {
+    return this._stateId;
+  }
+
+  public get countryId(): string | undefined {
+    return this._countryId;
   }
 
   public get listingImages(): ListingImage[] {
@@ -57,11 +87,17 @@ export class Listing implements IListing {
   static fromJson(json: any) {
     const listingImages = ListingImage.fromJsonListtoList(json.listing_images);
     const user = User.fromJson(json.user);
+    const countryId = json.geonames_country_id || undefined;
+    const stateId = json.geonames_state_id || undefined;
+    const cityId = json.geonames_city_id || undefined;
 
     return new Listing({
       id: json.id,
       title: json.title,
       description: json.description,
+      countryId,
+      stateId,
+      cityId,
       listingImages,
       user,
     });
@@ -75,6 +111,9 @@ export class Listing implements IListing {
       title: 'Fake Listing',
       description:
         'Lorem ipsum dolor sit amet consectetur adispiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      cityId: '6324222',
+      stateId: '3463504',
+      countryId: '3469034',
       listingImages: fakeImages,
       user: fakeUser,
     });

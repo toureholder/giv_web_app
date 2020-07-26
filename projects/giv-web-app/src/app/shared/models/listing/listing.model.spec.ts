@@ -32,6 +32,9 @@ describe('Listing model', () => {
       title: 'New listing',
       description:
         'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incidicunt ut labore et dolore magna aliqua.',
+      cityId: '6324222',
+      stateId: '3463504',
+      countryId: '3469034',
       listingImages: unorderedImages,
       user: User.getOneFake(),
     });
@@ -66,6 +69,8 @@ describe('Listing model', () => {
       })
     );
   });
+
+  it('should deserialize json objects with null cityID', () => {});
 
   it('should have a static method to deserialize a list of json objects', () => {
     // Arrange / Given
