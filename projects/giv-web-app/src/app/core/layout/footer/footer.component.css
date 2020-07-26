@@ -1,7 +1,8 @@
 footer {
   display: block;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid var(--giv-divider-color);
   height: 100%;
+  color: var(--giv-divider-color);
 }
 
 .footer-content {

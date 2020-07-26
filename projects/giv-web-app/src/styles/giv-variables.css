@@ -5,6 +5,10 @@
 
   /* spacing */
   --giv-default-vertical-spacing: 4.8rem;
+  --giv-default-padding: 2.4rem;
+
+  /* colors */
+  --giv-divider-color: var(--material-color-grey-200);
 
   /* misc */
   --giv-default-border-radius: 5px;

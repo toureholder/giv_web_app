@@ -24,6 +24,19 @@ body {
   height: 100%;
 }
 
+.giv-full-screen-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.giv-flex {
+  flex: 1;
+}
+
 /* swiper */
 
 .giv-carousel-container swiper > .swiper.s-wrapper .swiper-button-next,

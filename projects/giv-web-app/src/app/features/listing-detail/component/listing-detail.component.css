@@ -4,13 +4,6 @@
 
 .giv-carousel-container {
   height: 100vw;
-  /* Full width */
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
 }
 
 img {
@@ -21,7 +14,7 @@ img {
 }
 
 .giv-listing-info {
-  margin: 2.4rem 0;
+  margin: 2.4rem 0 0 0;
 }
 
 .giv-listing-info div {
@@ -51,6 +44,45 @@ p {
 .giv-user-name {
   font-size: 1.2rem;
   font-weight: 500;
+}
+
+.giv-report-block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: var(--giv-default-padding);
+  border-top: 1px solid var(--giv-divider-color);
+}
+
+.giv-report-block:active {
+  background-color: var(--giv-divider-color);
+}
+
+.giv-report-block i.alert {
+  font-size: 36px;
+  margin-right: 16px;
+}
+
+.giv-report-block i.chevron {
+  font-size: 24px;
+  margin-left: 16px;
+}
+
+.giv-report-block div {
+  margin: 0 0;
+}
+
+.giv-report-block .giv-title {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Desktop */

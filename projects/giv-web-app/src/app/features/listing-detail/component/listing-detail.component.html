@@ -11,7 +11,10 @@
 >
   <div class="giv-listing-detail-grid">
     <div class="giv-carousel-wrapper">
-      <div data-test="carousel" class="giv-carousel-container">
+      <div
+        data-test="carousel"
+        class="giv-carousel-container giv-full-screen-width"
+      >
         <swiper [config]="swiperConfig">
           <div
             data-test="slide"
@@ -43,7 +46,18 @@
         >
       </div>
 
-      <div data-test="report">report</div>
+      <a [href]="'https://wa.me/5561981178515'">
+        <div data-test="report" class="giv-report-block giv-full-screen-width">
+          <i class="material-icons alert">error_outline</i>
+          <div class="giv-flex">
+            <div class="giv-title">Denúncia</div>
+            <div class="giv-content">
+              Encntrou algo de errado com este anúncio? Denuncie aqui.
+            </div>
+          </div>
+          <i class="material-icons chevron">chevron_right</i>
+        </div>
+      </a>
     </div>
   </div>
 
