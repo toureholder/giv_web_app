@@ -48,4 +48,20 @@ export class Location implements ILocation {
       city,
     });
   }
+
+  static getOneFake({
+    country,
+    state,
+    city,
+  }: {
+    country?: Country;
+    state?: State;
+    city?: City;
+  }): Location {
+    return new Location({
+      country: country || new Country({ id: '3469034', name: 'Brasil' }),
+      state: state || new State({ id: '3463504', name: 'Distrito Federal' }),
+      city: city || new City({ id: '6324222', name: 'Brasília' }),
+    });
+  }
 }
