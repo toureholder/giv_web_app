@@ -29,3 +29,7 @@ export class LocationPart implements ILocationPart {
     });
   }
 }
+
+export class Country extends LocationPart {}
+export class State extends LocationPart {}
+export class City extends LocationPart {}
