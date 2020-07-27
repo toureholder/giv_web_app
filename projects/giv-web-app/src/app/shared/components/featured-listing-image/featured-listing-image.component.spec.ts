@@ -9,7 +9,7 @@ describe('FeaturedListingImageComponent', () => {
   let component: FeaturedListingImageComponent;
   let template: HTMLElement;
   let featuredImage: ListingImage | undefined;
-  const fakeListing = Listing.getOneFake();
+  const fakeListing = Listing.getOneFake({});
 
   beforeEach(() => {
     TestBed.configureTestingModule({

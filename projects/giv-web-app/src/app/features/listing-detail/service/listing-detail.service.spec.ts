@@ -27,7 +27,7 @@ describe('ListingDetailService', () => {
 
   it('should get listing from repository', () => {
     // Arrange / Given
-    const fakeListing = Listing.getOneFake(23);
+    const fakeListing = Listing.getOneFake({ id: 23 });
     mockRepository.getListing.and.returnValue(of(fakeListing));
 
     // Act / When

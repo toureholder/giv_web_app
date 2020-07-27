@@ -103,19 +103,36 @@ export class Listing implements IListing {
     });
   }
 
-  static getOneFake(id?: number): Listing {
-    const fakeImages = ListingImage.getFakeList();
-    const fakeUser = User.getOneFake();
+  static getOneFake({
+    id,
+    title,
+    description,
+    countryId,
+    stateId,
+    cityId,
+    listingImages,
+    user,
+  }: {
+    id?: number;
+    title?: string;
+    description?: string;
+    countryId?: string | undefined;
+    stateId?: string | undefined;
+    cityId?: string | undefined;
+    listingImages?: ListingImage[];
+    user?: User;
+  }): Listing {
     return new Listing({
       id: id || 1,
-      title: 'Fake Listing',
+      title: title || 'Fake Listing',
       description:
+        description ||
         'Lorem ipsum dolor sit amet consectetur adispiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      cityId: '6324222',
-      stateId: '3463504',
-      countryId: '3469034',
-      listingImages: fakeImages,
-      user: fakeUser,
+      cityId: cityId || '6324222',
+      stateId: stateId || '3463504',
+      countryId: countryId || '3469034',
+      listingImages: listingImages || ListingImage.getFakeList(),
+      user: user || User.getOneFake(),
     });
   }
 
@@ -124,7 +141,7 @@ export class Listing implements IListing {
     const list: Listing[] = [];
 
     for (let index = 0; index < count; index++) {
-      list.push(Listing.getOneFake());
+      list.push(Listing.getOneFake({}));
     }
 
     return list;

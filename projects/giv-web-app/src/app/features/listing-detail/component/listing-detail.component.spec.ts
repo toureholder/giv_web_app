@@ -44,7 +44,9 @@ describe('ListingDetailComponent', () => {
   describe('ui', () => {
     describe('when get listing request is loading', () => {
       beforeEach(() => {
-        mockService.getListing.and.returnValue(of(Listing.getOneFake(1)));
+        mockService.getListing.and.returnValue(
+          of(Listing.getOneFake({ id: 1 }))
+        );
 
         fixture.detectChanges();
 
@@ -67,7 +69,7 @@ describe('ListingDetailComponent', () => {
     });
 
     describe('when get listing request suceeds', () => {
-      const fakeListing = Listing.getOneFake(1);
+      const fakeListing = Listing.getOneFake({ id: 1 });
 
       beforeEach(() => {
         mockService.getListing.and.returnValue(of(fakeListing));
@@ -140,7 +142,7 @@ describe('ListingDetailComponent', () => {
     });
 
     it('get listing request state should be SUCCESS after service response', () => {
-      mockService.getListing.and.returnValue(of(Listing.getOneFake(1)));
+      mockService.getListing.and.returnValue(of(Listing.getOneFake({ id: 1 })));
 
       fixture.detectChanges();
 
@@ -158,7 +160,7 @@ describe('ListingDetailComponent', () => {
 
     it('should fetch listing that corresponds to the "id" paramater', () => {
       // Given
-      const fakeListing = Listing.getOneFake(listingId);
+      const fakeListing = Listing.getOneFake({ id: listingId });
       mockService.getListing.and.returnValue(of(fakeListing));
 
       // When
@@ -173,7 +175,7 @@ describe('ListingDetailComponent', () => {
 
     it('should get listing from service', () => {
       // Arrange / Given
-      const fakeListing = Listing.getOneFake(listingId);
+      const fakeListing = Listing.getOneFake({ id: listingId });
       mockService.getListing.and.returnValue(of(fakeListing));
 
       // Act / When

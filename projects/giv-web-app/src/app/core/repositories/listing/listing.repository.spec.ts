@@ -26,7 +26,7 @@ describe('ListingService', () => {
   it('should get listing by id from api', () => {
     // Arrange / Given
     const id = 271;
-    const fakeListing = Listing.getOneFake(id);
+    const fakeListing = Listing.getOneFake({ id });
     mockApi.fetchOne.and.returnValue(of(fakeListing));
 
     // Act / When

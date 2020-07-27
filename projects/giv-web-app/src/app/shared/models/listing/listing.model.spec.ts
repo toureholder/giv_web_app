@@ -1,14 +1,11 @@
 import { fake } from '../../../../testing/fake-api-response';
-import { Listing } from './listing.model';
 import { ListingImage } from '../listing-image/listing-image.model';
-import { User } from '../user/user.model';
+import { Listing } from './listing.model';
 
 describe('Listing model', () => {
-  const fakekApiResponse = fake.homeCategoriesList;
-
   it('featuredImage should be image with lowest position', () => {
     // Arrange / Given
-    const model = Listing.getOneFake();
+    const model = Listing.getOneFake({});
 
     // Act / When
     const featuredImage = model.featuredImage;
@@ -27,17 +24,7 @@ describe('Listing model', () => {
     ];
 
     // Act / When
-    const newListing = new Listing({
-      id: 1,
-      title: 'New listing',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incidicunt ut labore et dolore magna aliqua.',
-      cityId: '6324222',
-      stateId: '3463504',
-      countryId: '3469034',
-      listingImages: unorderedImages,
-      user: User.getOneFake(),
-    });
+    const newListing = Listing.getOneFake({ listingImages: unorderedImages });
 
     // Assert / Then
     expect(newListing.listingImages[0].position).toEqual(0);
@@ -48,7 +35,7 @@ describe('Listing model', () => {
 
   it('should have a static method to deserialize a json object', () => {
     // Arrange / Given
-    const json = fakekApiResponse[0].listings[0];
+    const json = fake.listing;
     const firstListingImageJson = json.listing_images[0];
 
     // Act / When
@@ -70,11 +57,9 @@ describe('Listing model', () => {
     );
   });
 
-  it('should deserialize json objects with null cityID', () => {});
-
   it('should have a static method to deserialize a list of json objects', () => {
     // Arrange / Given
-    const json = fakekApiResponse[0].listings;
+    const json = fake.homeCategoriesList[1].listings;
     const firstListingJson = json[0];
     const firstListingImageJson = firstListingJson.listing_images[0];
 
